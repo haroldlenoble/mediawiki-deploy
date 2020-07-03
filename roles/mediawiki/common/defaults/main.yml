@@ -1,0 +1,41 @@
+---
+
+    # DB name
+    mediawiki_db_name: "mediawiki"
+    
+    # db username and password
+    mediawiki_db_user: "mediawiki"
+    mediawiki_db_password: !vault |
+      $ANSIBLE_VAULT;1.1;AES256
+      36663934633330396131376162363633666635376633313430616164303662633233303232353839
+      3932666230633632626434363734623537623463363631320a636662363032376563303163643366
+      37626237383534653035663335623233646364326365326565366361343835663030316533376664
+      6633376539663563310a386439653931623333316532326262343562326638313266343236346536
+      3032
+    
+    # Mediawiki administrator name and password
+    mediawiki_admin_user: "admin"
+    mediawiki_admin_password: !vault |
+      $ANSIBLE_VAULT;1.1;AES256
+      36663934633330396131376162363633666635376633313430616164303662633233303232353839
+      3932666230633632626434363734623537623463363631320a636662363032376563303163643366
+      37626237383534653035663335623233646364326365326565366361343835663030316533376664
+      6633376539663563310a386439653931623333316532326262343562326638313266343236346536
+      3032
+    
+    # Mediawiki name and title
+    mediawiki_name: "mediawiki"
+    mediawiki_title: "ELS"
+    
+    # Mediawiki install directory
+    mediawiki_directory: "/var/www/html/{{mediawiki_name}}"
+    
+    # Maintenance folder for Mediawiki
+    mediawiki_maintenance_directory: "{{mediawiki_directory}}/maintenance"
+    
+    # Defines the first mariadb host
+    mediawiki_db_host: "{{groups.db.0}}"
+    
+    # Mediawiki URL
+    mediawiki_archive_url: "https://releases.wikimedia.org/mediawiki/1.31/mediawiki-1.31.1.tar.gz"
+    
